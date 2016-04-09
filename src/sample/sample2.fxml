@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" fx:id="Back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.99977792969" prefWidth="1374.000199999995" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.ReciboFORM">
+  <children>
+    <Pane fx:id="back" layoutX="0.0" layoutY="50.0" prefHeight="517.999755859375" prefWidth="1374.000244140625">
+      <children>
+        <TextField fx:id="txtfieldnrecibo" layoutX="41.0" layoutY="138.0" prefWidth="121.0" />
+        <TextField fx:id="txtfieldlocexp" layoutX="41.0" layoutY="226.0" prefWidth="172.0" />
+        <TextField fx:id="txtfieldimporte" layoutX="285.0" layoutY="226.0" prefWidth="107.0" />
+        <Label layoutX="41.0" layoutY="102.0" text="RECIBO NÚMERO" />
+        <Label layoutX="41.0" layoutY="191.0" text="LOCALIDAD DE EXPEDICIÓN" />
+        <Label layoutX="285.0" layoutY="190.0" text="IMPORTE" />
+        <TextField fx:id="txtfieldfechaexp" layoutX="285.0" layoutY="138.0" prefWidth="121.0" />
+        <TextField fx:id="txtfieldvencimiento" layoutX="41.0" layoutY="308.0" prefWidth="351.0" />
+        <Label layoutX="285.0" layoutY="102.0" text="FECHA DE EXPEDICIÓN" />
+        <Label layoutX="41.0" layoutY="271.0" text="VENCIMIENTO" />
+        <Label layoutX="41.0" layoutY="347.0" text="EUROS" />
+        <TextField fx:id="txtfieldeuros" layoutX="41.0" layoutY="372.0" prefWidth="351.0" />
+        <Label layoutX="41.0" layoutY="411.0" text="CONCEPTO" />
+        <TextField fx:id="txtfieldconcepto" layoutX="41.0" layoutY="434.0" prefWidth="351.0" />
+        <Label layoutX="573.0" layoutY="152.0" text="PAGADERO EN:" />
+        <Label layoutX="573.0" layoutY="194.0" text="PERSONA/ENTIDAD" />
+        <Label layoutX="573.0" layoutY="240.0" text="DOMICILIO" />
+        <TextField fx:id="txtfieldpersona" layoutX="699.0" layoutY="191.0" prefWidth="225.0" />
+        <TextField fx:id="txtfielddomicilio" layoutX="699.0" layoutY="237.0" prefWidth="225.0" />
+        <TextField fx:id="txtfieldncuenta" layoutX="1103.0" layoutY="428.0" prefWidth="179.0" />
+        <Label layoutX="945.0" layoutY="434.0" text="Nº DE CUENTA" />
+        <TextField fx:id="txtfieldnpagador" layoutX="1103.0" layoutY="364.0" prefWidth="179.0" />
+        <TextField fx:id="txtfielddompag" layoutX="1103.0" layoutY="397.0" prefWidth="179.0" />
+        <Label layoutX="945.0" layoutY="403.0" text="DOMICILIO PAGADOR" />
+        <Label layoutX="945.0" layoutY="367.0" text="NOMBRE PAGADOR" />
+        <Button fx:id="savebtn" layoutX="540.0" layoutY="372.0" mnemonicParsing="false" onAction="#savedatos" prefHeight="30.9609375" prefWidth="124.0" styleClass="null" text="GUARDAR">
+          <stylesheets>
+            <URL value="@Estilo_vista.css" />
+          </stylesheets>
+        </Button>
+        <Button fx:id="excelbtn" layoutX="541.0" layoutY="426.0" mnemonicParsing="false" onAction="#generaexcel" prefHeight="29.9609375" prefWidth="124.0" text="GENERAR EXCEL" />
+        <TableView fx:id="tablepagador" layoutX="940.0" layoutY="39.0" prefHeight="308.0" prefWidth="342.0">
+          <columns>
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="116.0" text="nombre" fx:id="colnombre" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="110.0" text="domicilio" fx:id="coldomicilio" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="115.0" text="ncuenta" fx:id="colncuenta" />
+          </columns>
+        </TableView>
+        <TextField id="txtfieldvencimiento" fx:id="txtfieldnombrerecibo" layoutX="41.0" layoutY="61.0" prefWidth="172.0" />
+        <Label layoutX="41.0" layoutY="26.0" text="NOMBRE RECIBO" />
+        <Label layoutX="719.0" layoutY="42.0" text="Cliente" />
+        <ComboBox fx:id="clienteList" editable="true" layoutX="806.0" layoutY="39.0" prefWidth="118.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+      </children>
+    </Pane>
+    <Pane layoutX="-4.0" layoutY="0.0" prefHeight="50.0" prefWidth="1379.0" style="&#10;-fx-background-color: #8E5353;">
+      <children>
+        <Button fx:id="btncliente" layoutX="0.0" layoutY="0.0" mnemonicParsing="false" onAction="#changeCliente" prefHeight="48.0" prefWidth="96.0" style="&#10;-fx-background-color: #8E5353;" text="Cliente" textFill="WHITE" />
+        <Button fx:id="btnpresupuesto" layoutX="96.0" layoutY="0.0" mnemonicParsing="false" onAction="#changePresupuesto" prefHeight="48.000099999997474" prefWidth="96.0" style="&#10;-fx-background-color: #8E5353;" text="Presupuesto" textFill="WHITE" />
+        <Button fx:id="btnfactura" layoutX="192.0" layoutY="0.0" mnemonicParsing="false" onAction="#changeFactura" prefHeight="48.0" prefWidth="96.00002207031503" style="&#10;-fx-background-color: #8E5353;" text="Factura" textFill="WHITE" />
+        <Button fx:id="btnrecibo" layoutX="288.0" layoutY="0.0" mnemonicParsing="false" onAction="#changeRecibo" prefHeight="48.0" prefWidth="96.0" style="&#10;-fx-background-color: #8E5353;" text="Recibo" textFill="WHITE" />
+        <Button id="btncliente" fx:id="btnproveedor" layoutX="384.0" layoutY="0.0" mnemonicParsing="false" onAction="#changeProveedor" prefHeight="48.0" prefWidth="96.0" style="&#10;-fx-background-color: #8E5353;" text="Proveedor" textFill="WHITE" />
+        <Button id="btnfactura" fx:id="btnfacturaproveedor" layoutX="480.0" layoutY="0.0" mnemonicParsing="false" onAction="#changeProveedorFactura" prefHeight="48.0" prefWidth="94.00002207031503" style="&#10;-fx-background-color: #8E5353;" text="Factura" textFill="WHITE" />
+      </children>
+    </Pane>
+  </children>
+  <stylesheets>
+    <URL value="@Estilo_vista.css" />
+  </stylesheets>
+</AnchorPane>

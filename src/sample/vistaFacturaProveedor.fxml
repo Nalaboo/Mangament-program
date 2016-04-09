@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" fx:id="Back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="565.9999000000025" prefWidth="1374.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.ProveedorFacturaFORM">
+  <children>
+    <Pane id="back" layoutX="0.0" layoutY="0.0" prefHeight="565.9998779296875" prefWidth="1374.0">
+      <children>
+        <Label layoutX="45.0" layoutY="142.0" text="NºFactura" />
+        <Label layoutX="45.0" layoutY="194.0" prefWidth="81.0" text="Fecha" />
+        <TextField fx:id="txtfieldnfactura" layoutX="195.0" layoutY="131.0" prefWidth="104.9998779296875" text="" />
+        <TextField fx:id="txtfieldfecha" layoutX="195.0" layoutY="188.0" prefWidth="104.9998779296875" />
+        <Button fx:id="btnsavefactura" layoutX="516.0" layoutY="428.0" mnemonicParsing="false" onAction="#savefact" prefHeight="48.0" prefWidth="211.0" text="Guardar Factura" />
+        <TextField id="txtfieldfecha" fx:id="txtpreciototal" layoutX="195.0" layoutY="395.0" prefWidth="104.9998779296875" />
+        <TextField id="txtfieldfecha" fx:id="txtprecioiva" layoutX="195.0" layoutY="343.0" prefWidth="104.9998779296875" />
+        <Label layoutX="498.0" layoutY="79.0" text="Proveedor" />
+        <Label layoutX="45.0" layoutY="398.0" text="Precio total" />
+        <Label layoutX="47.0" layoutY="343.0" text="Precio iva" />
+        <Label layoutX="45.0" layoutY="247.0" text="Forma de pago" />
+        <TextField id="txtfieldfecha" fx:id="txtfieldmanerapago" layoutX="195.0" layoutY="242.0" prefWidth="104.9998610351613" />
+        <Label layoutX="47.0" layoutY="293.0" text="Vencimiento" />
+        <TextField id="txtfieldfecha" fx:id="txtfieldvencimiento" layoutX="195.0" layoutY="290.0" prefWidth="104.9998779296875" />
+        <TextField id="txtfieldnfactura" fx:id="txtnombrecli" layoutX="628.0" layoutY="147.0" prefWidth="118.0" />
+        <TextField id="txtfieldnfactura" fx:id="txtcifcli" layoutX="628.0" layoutY="194.0" prefWidth="117.99997792968497" />
+        <TextField id="txtfieldnfactura" fx:id="txtdireccioncli" layoutX="628.0" layoutY="242.0" prefWidth="118.0" />
+        <TextField id="txtfieldnfactura" fx:id="txtfieldpoblacion" layoutX="628.0" layoutY="298.0" prefWidth="118.0" />
+        <ComboBox fx:id="clienteList" editable="true" layoutX="628.0" layoutY="76.0" prefWidth="118.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <TextField id="txtfieldnfactura" fx:id="txtfieldnombrefac" layoutX="195.0" layoutY="76.0" prefWidth="104.9998779296875" text="" />
+        <Label layoutX="45.0" layoutY="79.0" text="Nombre factura" />
+        <Label layoutX="498.0" layoutY="197.0" text="CIF Proveedor" />
+        <Label layoutX="498.0" layoutY="153.0" text="NombreProveedor" />
+        <Label layoutX="498.0" layoutY="245.0" text="Dirección Proveedor" />
+        <Label layoutX="498.0" layoutY="301.0" text="Población" />
+        <Pane layoutX="-1.0" layoutY="0.0" prefHeight="51.0" prefWidth="1374.0" style="&#10;-fx-background-color: #8E5353;">
+          <children>
+            <Button fx:id="btncliente" layoutX="0.0" layoutY="0.0" mnemonicParsing="false" onAction="#changeCliente" prefHeight="48.0" prefWidth="96.0" style="&#10;-fx-background-color: #8E5353;" text="Cliente" textFill="WHITE" />
+            <Button id="btnpresupuesto" fx:id="btnPresupuesto" layoutX="96.0" layoutY="0.0" mnemonicParsing="false" onAction="#changePresupuesto" prefHeight="48.0" prefWidth="96.0" style="&#10;-fx-background-color: #8E5353;" text="Presupuesto" textFill="WHITE" />
+            <Button fx:id="btnfactura" layoutX="192.0" layoutY="0.0" mnemonicParsing="false" onAction="#changeFactura" prefHeight="48.0" prefWidth="96.00001362305193" style="&#10;-fx-background-color: #8E5353;" text="Factura" textFill="WHITE" />
+            <Button fx:id="btnrecibo" layoutX="288.0" layoutY="0.0" mnemonicParsing="false" onAction="#changeRecibo" prefHeight="48.0" prefWidth="96.0" style="&#10;-fx-background-color: #8E5353;" text="Recibo" textFill="WHITE" />
+            <Button id="btncliente" fx:id="btnproveedor" layoutX="384.0" layoutY="0.0" mnemonicParsing="false" onAction="#changeProveedor" prefHeight="48.0" prefWidth="96.0" style="&#10;-fx-background-color: #8E5353;" text="Proveedor" textFill="WHITE" />
+            <Button id="btnfactura" fx:id="btnfacturaproveedor" layoutX="480.0" layoutY="0.0" mnemonicParsing="false" onAction="#changeProveedorFactura" prefHeight="48.0" prefWidth="96.00002207031503" style="&#10;-fx-background-color: #8E5353;" text="Factura" textFill="WHITE" />
+          </children>
+        </Pane>
+      </children>
+    </Pane>
+  </children>
+  <stylesheets>
+    <URL value="@Estilo_vista.css" />
+  </stylesheets>
+</AnchorPane>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" fx:id="Back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="1373.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.MostrarProveedorFactura">
+  <children>
+    <Pane id="btnadd" layoutX="0.0" layoutY="51.0" prefHeight="516.0006103515625" prefWidth="1374.0">
+      <children>
+        <TableView fx:id="Tablemostrar" layoutX="104.0" layoutY="35.0" prefHeight="421.0" prefWidth="387.0">
+          <columns>
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="192.0" text="Numero" fx:id="colnumero" />
+            <TableColumn id="colnombre" maxWidth="5000.0" minWidth="10.0" prefWidth="195.0" text="Nombre" fx:id="colnombre" />
+          </columns>
+        </TableView>
+        <Button id="btnadd" fx:id="btnnewfact" layoutX="616.0" layoutY="209.0" mnemonicParsing="false" onAction="#newfact" prefHeight="50.0" prefWidth="197.9998779296875" text="Añadir Factura Seleccionada" />
+        <Button fx:id="btndelete" layoutX="616.0" layoutY="291.0" mnemonicParsing="false" onAction="#deletefac" prefHeight="50.0" prefWidth="197.99990000000253" text="Eliminar Factura Seleccionada" />
+        <Button fx:id="btnseefact" layoutX="616.0" layoutY="122.0" mnemonicParsing="false" onAction="#seefact" prefHeight="50.0" prefWidth="198.0" text="Ver Factura Seleccionada" />
+      </children>
+    </Pane>
+    <Pane layoutX="0.0" layoutY="0.0" prefHeight="50.0" prefWidth="1374.0" style="&#10;-fx-background-color: #8E5353;">
+      <children>
+        <Button fx:id="btncliente" layoutX="0.0" layoutY="0.0" mnemonicParsing="false" onAction="#changeCliente" prefHeight="48.0" prefWidth="96.0" style="&#10;-fx-background-color: #8E5353;" text="Cliente" textFill="WHITE" />
+        <Button fx:id="btnpresupuesto" layoutX="96.0" layoutY="0.0" mnemonicParsing="false" onAction="#changePresupuesto" prefHeight="48.0" prefWidth="96.0" style="&#10;-fx-background-color: #8E5353;" text="Presupuesto" textFill="WHITE" />
+        <Button fx:id="btnfactura" layoutX="192.0" layoutY="0.0" mnemonicParsing="false" onAction="#changeFactura" prefHeight="48.0" prefWidth="95.9999915527369" style="&#10;-fx-background-color: #8E5353;" text="Factura" textFill="WHITE" />
+        <Button fx:id="btnrecibo" layoutX="288.0" layoutY="0.0" mnemonicParsing="false" onAction="#changeRecibo" prefHeight="48.0" prefWidth="96.0" style="&#10;-fx-background-color: #8E5353;" text="Recibo" textFill="WHITE">
+          <stylesheets>
+            <URL value="@Estilo_vista.css" />
+          </stylesheets>
+        </Button>
+        <Button id="btncliente" fx:id="btnproveedor" layoutX="384.0" layoutY="0.0" mnemonicParsing="false" onAction="#changeProveedor" prefHeight="48.0" prefWidth="96.0" style="&#10;-fx-background-color: #8E5353;" text="Proveedor" textFill="WHITE" />
+        <Button id="btnfactura" fx:id="btnfacturaproveedor" layoutX="480.0" layoutY="0.0" mnemonicParsing="false" onAction="#changeProveedorFactura" prefHeight="48.0" prefWidth="95.9999915527369" style="&#10;-fx-background-color: #8E5353;" text="Factura" textFill="WHITE" />
+      </children>
+    </Pane>
+  </children>
+</AnchorPane>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" fx:id="back" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="1373.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.PresupuestoFORM">
+  <children>
+    <Pane fx:id="back" layoutX="0.0" layoutY="50.0" prefHeight="518.0" prefWidth="1373.0">
+      <children>
+        <Label layoutX="959.0" layoutY="44.0" minHeight="8.0" prefHeight="20.9609375" prefWidth="69.0" text="Cliente" />
+        <TableView fx:id="tableconcepto" layoutX="386.0" layoutY="35.0" prefHeight="386.0" prefWidth="425.000022070315">
+          <columns>
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="244.0" text="Concepto" fx:id="colconcepto" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="182.0" text="Precio" fx:id="colprecio" />
+          </columns>
+        </TableView>
+        <TextField fx:id="txtfieldconcepto" layoutX="29.0" layoutY="231.0" prefWidth="273.0" />
+        <TextField fx:id="txtfieldprecio" layoutX="29.0" layoutY="317.0" prefWidth="273.0" />
+        <Label layoutX="29.0" layoutY="189.0" minHeight="8.0" prefHeight="20.9609375" prefWidth="69.0" text="Concepto" />
+        <Label layoutX="29.0" layoutY="281.0" minHeight="8.0" prefHeight="20.9609375" prefWidth="69.0" text="Precio" />
+        <TextField fx:id="txtfieldncliente" layoutX="1068.0" layoutY="142.0" prefWidth="104.0" />
+        <TextField fx:id="txtfieldcifcli" layoutX="1068.0" layoutY="106.0" prefWidth="104.0" />
+        <TextField fx:id="txtfielddireccion" layoutX="1068.0" layoutY="179.0" prefWidth="104.0" />
+        <TextField fx:id="txtfieldpoblacion" layoutX="1068.0" layoutY="217.0" prefWidth="104.0" />
+        <Button fx:id="btnadd" layoutX="30.0" layoutY="369.0" mnemonicParsing="false" onAction="#addconpre" prefWidth="272.0" text="Añadir fila" />
+        <Button fx:id="btnexcel" layoutX="959.0" layoutY="372.0" mnemonicParsing="false" onAction="#generaexcel" prefHeight="49.0" prefWidth="225.0" text="Generar Excel" />
+        <Button fx:id="btnsave" layoutX="959.0" layoutY="291.0" mnemonicParsing="false" onAction="#savepre" prefHeight="48.0" prefWidth="225.0" text="Guardar Presupuesto" />
+        <TextField id="txtfieldconcepto" fx:id="txtfieldpreciototal" layoutX="481.0" layoutY="449.0" prefWidth="104.0" />
+        <TextField id="txtfieldconcepto" fx:id="txtfieldprecioiva" layoutX="707.0" layoutY="449.0" prefWidth="104.0" />
+        <TextField id="txtfieldconcepto" fx:id="txtfieldnombrepre" layoutX="171.0" layoutY="35.0" prefWidth="131.0" />
+        <Label layoutX="30.0" layoutY="35.0" minHeight="8.0" prefHeight="20.9609375" prefWidth="141.0" text="Nombre Presupuesto" />
+        <Button fx:id="btnmodifyrow" layoutX="30.0" layoutY="407.0" mnemonicParsing="false" onAction="#modifyrow" prefWidth="273.0" text="Modificar fila seleccionada" />
+        <Button fx:id="btndeleterow" layoutX="30.0" layoutY="449.0" mnemonicParsing="false" onAction="#deleterow" prefWidth="272.0" text="Eliminar Fila Seleccionada" />
+        <Label layoutX="958.0" layoutY="145.0" text="Nombre Cliente" />
+        <Label layoutX="959.0" layoutY="109.0" text="CIF Cliente" />
+        <Label layoutX="959.0" layoutY="184.0" text="Dirección Cliente" />
+        <Label layoutX="959.0" layoutY="220.0" text="Población Cliente" />
+        <Label layoutX="386.0" layoutY="452.0" text="Precio Total" />
+        <Label layoutX="619.0" layoutY="452.0" text="Precio IVA" />
+        <ComboBox fx:id="clienteList" editable="true" layoutX="1061.0" layoutY="44.0" prefWidth="118.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+      </children>
+      <stylesheets>
+        <URL value="@Estilo_vista.css" />
+      </stylesheets>
+    </Pane>
+    <Pane layoutX="0.0" layoutY="0.0" prefHeight="50.0" prefWidth="1373.0" style="-fx-background-color: #8E5353;">
+      <children>
+        <Button fx:id="btncliente" layoutX="0.0" layoutY="0.0" mnemonicParsing="false" onAction="#changeCliente" prefHeight="48.0" prefWidth="96.0" style="&#10;-fx-background-color: #8E5353;" text="Cliente" textFill="WHITE" />
+        <Button fx:id="btnfactura" layoutX="192.0" layoutY="0.0" mnemonicParsing="false" onAction="#changeFactura" prefHeight="48.0" prefWidth="95.9999915527369" style="&#10;-fx-background-color: #8E5353;" text="Factura" textFill="WHITE" />
+        <Button fx:id="btnpresupuesto" layoutX="96.0" layoutY="0.0" mnemonicParsing="false" onAction="#changePresupuesto" prefHeight="48.0" prefWidth="96.0" style="&#10;-fx-background-color: #8E5353;" text="Presupuesto" textFill="WHITE" />
+        <Button fx:id="btnrecibo" layoutX="288.0" layoutY="0.0" mnemonicParsing="false" onAction="#changeRecibo" prefHeight="48.0" prefWidth="96.0" style="&#10;-fx-background-color: #8E5353;" text="Recibo" textFill="WHITE" />
+        <Button id="btncliente" fx:id="btnproveedor" layoutX="384.0" layoutY="0.0" mnemonicParsing="false" onAction="#changeProveedor" prefHeight="48.0" prefWidth="96.0" style="&#10;-fx-background-color: #8E5353" text="Proveedor" textFill="WHITE" />
+        <Button id="btnfactura" fx:id="btnfacturaproveedor" layoutX="480.0" layoutY="0.0" mnemonicParsing="false" onAction="#changeProveedorFactura" prefHeight="48.0" prefWidth="95.9999915527369" style="&#10;-fx-background-color: #8E5353" text="Factura" textFill="WHITE" />
+      </children>
+    </Pane>
+  </children>
+  <stylesheets>
+    <URL value="@Estilo_vista.css" />
+  </stylesheets>
+</AnchorPane>
